@@ -1,0 +1,5 @@
+# name the snapshot
+zfs snapshot -r rpool@rpool.snap1
+
+# send them to mounted backup folder
+zfs send -Rv rpool@rpool.snap1 | gzip > /MOUNT_LOCATION/HOSTNAME/rpool.snap1.gz
